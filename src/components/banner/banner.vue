@@ -3,10 +3,13 @@
     <div class="weui-panel weui-panel_access">
       <div class="weui-panel__hda">{{ title }}</div>
       <div class="weui-panel__bd">
-          <div  v-for="(item, index) in tagger"
-          :key="index" class="weui-media-box__hd">
-            <img class="weui-media-box__thumb" :src="item.imgUrl" alt="" />
-          </div>
+        <div
+          v-for="(item, index) in tagger"
+          :key="index"
+          class="weui-media-box__hd"
+        >
+          <img class="weui-media-box__thumb" :src="item.imgUrl" alt="" />
+        </div>
       </div>
     </div>
   </div>
@@ -59,19 +62,19 @@ export default {
   position: absolute;
   top: 19.766667rem;
 }
-.weui-panel__bd{
-    display: flex;
-    flex-wrap: wrap;
+.weui-panel__bd {
+  display: flex;
+  flex-wrap: wrap;
 }
-.weui-panel__hda{
-    font-size:15px;
-    color:black;
-    height:2.4rem;
-    line-height: 3.0rem;
-    padding-left:0.966667rem
+.weui-panel__hda {
+  font-size: 15px;
+  color: black;
+  height: 2.4rem;
+  line-height: 3rem;
+  padding-left: 0.966667rem;
 }
-.weui-media-box__thumb{
-    height:5.013333rem;
-    width:5.7rem
+.weui-media-box__thumb {
+  height: 5.013333rem;
+  width: 5.7rem;
 }
 </style>

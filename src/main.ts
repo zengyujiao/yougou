@@ -7,6 +7,7 @@ import store from "./store";
 import "./assets/index.css";
 import "./assets/Floor.css";
 import "./assets/ygIndes.css";
+import "./mui/css/mui.css";
 Vue.config.productionTip = false;
 
 new Vue({

@@ -13,8 +13,7 @@ const routes = [
   {
     path: "/detail",
     name: "detail",
-    component: () =>
-      import("../views/detail/detail.vue")
+    component: () => import("../views/detail/detail.vue")
   }
 ];
 

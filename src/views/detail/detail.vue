@@ -1,3 +1,3 @@
 <template>
-    <div>搜索页</div>
+  <div>搜索页</div>
 </template>
