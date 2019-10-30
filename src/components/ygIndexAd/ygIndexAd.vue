@@ -1,8 +1,10 @@
 <template>
   <div id="sectionName">
     <div class="seckillArea">{{ title }}</div>
-    <div v-for="(item, index) in tager" :key="index" class="newModules">
-      <img class="swiperImg" :src="item.imgUrl" />
+    <div class="swiper">
+      <div v-for="(item, index) in tager" :key="index" class="newModules">
+        <img class="swiperImg" :src="item.imgUrl" />
+      </div>
     </div>
   </div>
 </template>
@@ -32,8 +34,11 @@ export default {
 <style lang="scss" scoped>
 #sectionName {
   position: relative;
+  // top: 35rem;
+}
+.swiper{
+  overflow: scroll;
   display: flex;
-  top: 56rem;
 }
 .seckillArea {
   position: absolute;
@@ -47,10 +52,11 @@ export default {
   margin-top: 2.533333rem;
   height: 11.666667rem;
   background: #fff;
+  flex:none;
 }
 .swiperImg {
   padding-left: 0.933333rem;
   height: 10.666667rem;
-  width: 9rem;
+  width: 10rem;
 }
 </style>

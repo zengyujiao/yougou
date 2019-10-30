@@ -33,8 +33,8 @@
         <input type="hidden" name="entry" value="search" />
         <div class="ygIndexTopM">
           <div class="logoW"></div>
-          <input
-            id="ygIndexTopS"
+          <a href="http://localhost:8080/search">
+          <input id="ygIndexTopS"
             oninput="ygIndex.ygSearchKeyDown()"
             class="ygIndexTopS"
             name="kword"
@@ -42,6 +42,7 @@
             placeholder=""
             defaultlink=""
           />
+          </a>
           <em class="iconOnly"></em>
           <em id="resetInput" class="cleanInput"></em>
           <input
@@ -71,59 +72,6 @@
           <input type="hidden" value="" id="keyword" name="keyword" />
         </a>
       </form>
-      <div class="ygIndexTopL">
-        <a
-          onclick="javascript:_hmt.push(['_trackEvent', '首页点击消息统计', 'click', 'indexGoMessage']);"
-          href="/messageList.sc"
-        ></a
-        ><a href="/seoul?flag=2">海外购</a>
-      </div>
-      <ul class="indexSeacherHotUl indexSeacherHotUlT clearfix">
-        <li>
-          <a href="javascript:ygIndex.mallClickKeywordsy(0,'新款单鞋');"
-            >新款单鞋</a
-          >
-        </li>
-        <li>
-          <a href="javascript:ygIndex.mallClickKeywordsy(1,'老爹鞋');"
-            >老爹鞋</a
-          >
-        </li>
-        <li>
-          <a href="javascript:ygIndex.mallClickKeywordsy(2,'小白鞋');"
-            >小白鞋</a
-          >
-        </li>
-        <li>
-          <a href="javascript:ygIndex.mallClickKeywordsy(3,'休闲鞋');"
-            >休闲鞋</a
-          >
-        </li>
-        <li>
-          <a href="javascript:ygIndex.mallClickKeywordsy(4,'跑步鞋');"
-            >跑步鞋</a
-          >
-        </li>
-        <li>
-          <a href="javascript:ygIndex.mallClickKeywordsy(5,'百丽');">百丽</a>
-        </li>
-        <li>
-          <a href="javascript:ygIndex.mallClickKeywordsy(6,'思加图');"
-            >思加图</a
-          >
-        </li>
-        <li>
-          <a href="javascript:ygIndex.mallClickKeywordsy(7,'阿迪');">阿迪</a>
-        </li>
-        <li>
-          <a href="javascript:ygIndex.mallClickKeywordsy(8,'天美意');"
-            >天美意</a
-          >
-        </li>
-        <li>
-          <a href="javascript:ygIndex.mallClickKeywordsy(9,'卫衣');">卫衣</a>
-        </li>
-      </ul>
     </section>
   </div>
 </template>

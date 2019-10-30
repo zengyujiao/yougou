@@ -35,8 +35,8 @@
 </template>
 <style scoped>
 #sen-news {
-  position: absolute;
-  top: 32.266667rem;
+  position: relative;
+  /* top: 32.266667rem; */
 }
 .ygSwiperNewa {
   width: 18.433333rem;

@@ -58,8 +58,8 @@ export default {
 </script>
 <style scoped>
 #sen-seckill {
-  position: absolute;
-  top: 42.4rem;
+  position: relative;
+  /* top: 42.4rem; */
   display: flex;
 }
 .left {
@@ -77,7 +77,14 @@ export default {
   color: #666;
 }
 .goFont {
+  margin-top:-0.5rem;
   color: #666;
+}
+.weui-panel__bd{
+  height:12.9rem;
+}
+.weui-media-box{
+  height:6.9rem;
 }
 .weui-media-box__desc {
   color: #9446ff;

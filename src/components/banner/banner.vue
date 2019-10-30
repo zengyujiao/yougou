@@ -59,8 +59,8 @@ export default {
 </script>
 <style scoped>
 .bannersen {
-  position: absolute;
-  top: 19.766667rem;
+  position:relative;
+  /* top: 19.766667rem; */
 }
 .weui-panel__bd {
   display: flex;

@@ -1,60 +1,71 @@
 <template>
-  <div id="refWz">
+  <div id="refWz" ref="refWz">
     <div id="f1">
       <div class="ygIngexAdb">{{ title }}</div>
-      <div v-for="(item, index) in getNews" :key="index" class="sen-new-brand">
+      <div v-for="(item,index) in floor" :key="index" class="sen-new-brand">
         <div class="sen-new-brand-img">
-          <img :src="item.bigImgUrl" />
+          <img id="brand" :src="item.bigImgUrl" />
         </div>
-        <div class="swiper-container">
-          <ul>
-            <li class="container">
-              <span class="tag">新品</span>
-              <img class="container-img" />
+        <div class="swiper-container" :ref="'swiper'+index" >
+          <ul class="swiper-ul">
+            <li v-for="(item,index) in item.items" :key="index" class="container">
+              <span v-text="item.tag" class="tag"></span>
+              <img class="container-img" :src="item.imgUrl"/>
               <p class="swiper-price">
-                <span class="price">￥64</span>
-                <del class="delprice">￥ 63</del>
+                <span v-text="'￥'+item.price" class="price"></span>
+                <del v-text="'￥'+item.delPrice" class="delprice"></del>
               </p>
             </li>
+            <li class="ygSwiperSlide more-area ygSwiperSlideShow">
+							<a id="SlideShow" href="fs-9e5ff71cff7d4b5ebab9688f6fc06df0">
+                <div class="more">
+                  <p>查看更多</p>
+                  <p>MORE+</p>
+                </div>
+              </a>
+						</li>
           </ul>
         </div>
       </div>
     </div>
+
   </div>
 </template>
 <script>
+import Footer from "../footer/footer"
 import axios from "axios";
+import BScroll from 'better-scroll'
 export default {
   data() {
     return {
       title: "品牌专区",
-      page: 1
+      page: 26,
+      floor:[],
+      scroll: null,
+      scroll_1: null,
     };
   },
   methods: {
-    getNews() {
-      // 先在外面把this保存一下
-      let _self = this;
-      axios
-        .get("http://localhost:3000", {
-          params: {
-            page: this.page++, //Number 页数
-            tab: ask, // String 主题分类。目前有 ask share job good
-            limit: 20, // Number 每一页的主题数量
-            mdrender: false // String 当为 false 时
-          }
-        })
+    getFloor() {
+      
+      return axios
+        .get("http://10.3.142.130:8088/api/floor/"+this.page)
         .then(data => {
-          _self = data;
+          this.floor = data.data
         });
-    }
+    },
+    
+  },
+  mounted(){
+    this.getFloor();
   }
 };
 </script>
 <style lang="scss" scoped>
-#f1 {
+#refWz {
   position: relative;
-  top: 56.5rem;
+}
+#f1 {
   height: 100%;
   width: 100%;
   background: #fff;
@@ -69,25 +80,35 @@ export default {
 }
 .sen-new-brand-img {
   height: 10rem;
-  background: cornflowerblue;
 }
-.swiper-container {
+#brand{
   height: 10rem;
+  width:100%;
+}
+.swiper-container{
+  overflow: hidden;
+}
+.swiper-ul{
+  display: flex;
+  overflow-x: scroll;
+  padding-bottom:10.5rem;
 }
 .container {
+  flex: none;
   height: 10rem;
-  width: 6rem;
-  display: flex;
-  flex-direction: column;
+  width: 7rem;
+  background:#fff;
 }
 .swiper-container .container .tag {
   display: inline-block;
   height: 1.5rem;
   width: 2rem;
+  font-size: .186667rem;
   text-align: center;
   line-height: 1.5rem;
-  background: #627;
+  background: red;
   margin-left: 4rem;
+  color:#fff;
 }
 .container .container-img {
   height: 6rem;
@@ -102,14 +123,22 @@ export default {
   display: inline-block;
   height: 1.5rem;
   width: 2rem;
+  color:#333;
   line-height: -3rem;
   margin-top: 0.5rem;
 }
 .swiper-price .delprice {
   display: inline-block;
   height: 1.5rem;
-  width: 2rem;
+  width: 3rem;
   line-height: -3rem;
   margin-top: 0.4rem;
+}
+.ygSwiperSlide>a {
+    display: block;
+    width: 7rem;
+    text-align: center;
+    height:7rem;
+    padding-top:3rem;
 }
 </style>

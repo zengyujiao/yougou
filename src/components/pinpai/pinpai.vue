@@ -65,8 +65,7 @@ export default {
 </script>
 <style scoped>
 #ygSwiperConTwo {
-  position: absolute;
-  top: 34.466667rem;
+  position:relative;
 }
 .weui-panel__bd {
   display: flex;

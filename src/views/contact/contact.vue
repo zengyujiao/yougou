@@ -9,7 +9,8 @@
       <Seckill />
       <YgIndexAd />
       <YgIndexAdb />
-    <Tabber class="taber"/>
+      <Footer></Footer>
+    <Tabber/>
   </div>
 </template>
 
@@ -23,7 +24,9 @@ import Pinpai from "@/components/pinpai/pinpai.vue";
 import Seckill from "@/components/seckill/seckill.vue";
 import YgIndexAd from "@/components/ygIndexAd/ygIndexAd.vue";
 import YgIndexAdb from "@/components/ygIndexAdb/ygIndexAdb.vue";
+import Footer from "@/components/footer/footer.vue";
 import Tabber from "@/components/tabber/tabber.vue";
+
 export default {
   components: {
     Header,
@@ -35,6 +38,7 @@ export default {
     Seckill,
     YgIndexAd,
     YgIndexAdb,
+    Footer,
     Tabber
   }
 };

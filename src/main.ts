@@ -8,6 +8,10 @@ import "./assets/index.css";
 import "./assets/Floor.css";
 import "./assets/ygIndes.css";
 import "./mui/css/mui.css";
+import "./assets/brandshops.css"
+import "./assets/h5.css";
+import "./assets/productDetail-two.css";
+import "./assets/login.css";
 Vue.config.productionTip = false;
 
 new Vue({
